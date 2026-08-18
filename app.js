@@ -43,6 +43,16 @@ document.addEventListener('click',e=>{if(siteHeader.classList.contains('menu-ope
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&siteHeader.classList.contains('menu-open')){setMenu(false);menuToggle.focus()}});
 addEventListener('resize',()=>{if(innerWidth>980)setMenu(false)},{passive:true});
 
+// Creator profile dialog
+const creatorDialog=document.querySelector('#creatorDialog');
+const creatorButtons=['#creatorOpen','#mobileCreatorOpen','#footerCreatorOpen'].map(x=>document.querySelector(x)).filter(Boolean);
+function openCreator(){setMenu(false);creatorDialog.showModal();document.body.classList.add('menu-lock')}
+function closeCreator(){creatorDialog.close();document.body.classList.remove('menu-lock')}
+creatorButtons.forEach(button=>button.addEventListener('click',openCreator));
+document.querySelector('#creatorClose').addEventListener('click',closeCreator);
+creatorDialog.addEventListener('click',e=>{if(e.target===creatorDialog)closeCreator()});
+creatorDialog.addEventListener('close',()=>document.body.classList.remove('menu-lock'));
+
 // Highlight the current section in the desktop navigation
 const desktopLinks=[...document.querySelectorAll('.desktop-menu a')];
 const spy=new IntersectionObserver(entries=>{

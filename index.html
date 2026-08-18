@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://pillow1243.github.io/aliakbar-gallery/assets/og/aliakbar-share.jpg?v=4">
   <link rel="icon" href="assets/icons/mark.svg">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive.css?v=2">
+  <link rel="stylesheet" href="responsive.css?v=3">
   <title>ALI | Photography</title>
 </head>
 <body>
@@ -43,6 +43,7 @@
         <a href="#gallery"><span>02</span> گالری</a>
         <a href="#about"><span>03</span> درباره من</a>
         <a href="#contact"><span>04</span> تماس</a>
+        <button class="creator-nav" id="creatorOpen"><span>05</span> درباره سازنده سایت</button>
       </div>
 
       <div class="nav-actions">
@@ -61,6 +62,7 @@
         <a href="#gallery"><span>02</span><strong>گالری آثار</strong><i>↙</i></a>
         <a href="#about"><span>03</span><strong>درباره عکاس</strong><i>↙</i></a>
         <a href="#contact"><span>04</span><strong>تماس و همکاری</strong><i>↙</i></a>
+        <button class="mobile-creator-open" id="mobileCreatorOpen"><span>05</span><strong>درباره سازنده سایت</strong><i>↙</i></button>
       </div>
       <div class="mobile-contact">
         <a href="tel:09025921929">تماس مستقیم</a>
@@ -135,10 +137,33 @@
     <div class="footer-meta">
       <p>© <span id="year"></span> Ali Akbar Elmi — All Rights Reserved</p>
       <p>ساخته شده توسط <strong>مبین.آ</strong></p>
+      <button class="footer-creator-open" id="footerCreatorOpen">درباره سازنده سایت</button>
       <a class="creator-channel" href="https://t.me/MobinA_MainChannel" target="_blank" rel="noopener noreferrer">اطلاع‌رسانی سایت سازنده این سایت</a>
     </div>
     <a href="#home" class="to-top" aria-label="بازگشت به بالا">↑</a>
   </footer>
+
+  <dialog class="creator-dialog" id="creatorDialog" aria-labelledby="creatorTitle">
+    <button class="creator-close" id="creatorClose" aria-label="بستن پنجره درباره سازنده">×</button>
+    <div class="creator-profile">
+      <div class="creator-aside">
+        <div class="creator-avatar"><span>M</span><i>آ</i></div>
+        <p>WEB DEVELOPER<br>&amp; DIGITAL CREATOR</p>
+        <div class="creator-online"><i></i> آماده همکاری</div>
+      </div>
+      <div class="creator-content">
+        <p class="creator-kicker">ABOUT THE CREATOR / 05</p>
+        <h2 id="creatorTitle">سلام، من<br><span>مبین.آ</span> هستم.</h2>
+        <p class="creator-bio">یک برنامه‌نویس حرفه‌ای و طراح تجربه‌های دیجیتال هستم. کار من تبدیل ایده‌ها به وب‌سایت‌های سریع، مدرن، واکنش‌گرا و خوش‌ساخت است؛ از طراحی رابط کاربری تا پیاده‌سازی فنی و بهینه‌سازی برای تمام دستگاه‌ها.</p>
+        <div class="creator-skills"><span>طراحی رابط کاربری</span><span>توسعه وب</span><span>Responsive Design</span><span>بهینه‌سازی</span></div>
+        <div class="creator-contacts">
+          <a href="tel:09302932271"><small>شماره تماس</small><strong class="ltr">09302932271</strong><i>↗</i></a>
+          <a href="mailto:void.hunter2158@gmail.com"><small>ایمیل</small><strong class="ltr">void.hunter2158@gmail.com</strong><i>↗</i></a>
+          <a href="https://t.me/MobinA_MainChannel" target="_blank" rel="noopener noreferrer"><small>کانال اطلاع‌رسانی تلگرام</small><strong class="ltr">@MobinA_MainChannel</strong><i>↗</i></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
   <dialog class="lightbox" id="lightbox" aria-label="نمایش تصویر">
     <button class="close" id="closeLightbox" aria-label="بستن">×</button>
@@ -147,6 +172,6 @@
     <button class="arrow next" id="nextPhoto" aria-label="تصویر بعدی">←</button>
   </dialog>
   <noscript><p class="noscript">برای مشاهدهٔ گالری، جاوااسکریپت مرورگر را فعال کنید.</p></noscript>
-  <script src="app.js?v=2" defer></script>
+  <script src="app.js?v=3" defer></script>
 </body>
 </html>
