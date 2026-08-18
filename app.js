@@ -25,3 +25,29 @@ loadBtn.onclick=()=>{limit+=12;render()};document.querySelector('#closeLightbox'
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
 addEventListener('scroll',()=>{const y=scrollY,d=document.documentElement.scrollHeight-innerHeight;document.querySelector('.progress').style.width=`${d?y/d*100:0}%`;document.querySelector('#nav').classList.toggle('scrolled',y>40)},{passive:true});
 document.querySelector('#year').textContent=fa(new Date().getFullYear());
+
+// Accessible responsive navigation
+const siteHeader=document.querySelector('#nav');
+const menuToggle=document.querySelector('#menuToggle');
+const mobileMenu=document.querySelector('#mobileMenu');
+function setMenu(open){
+ siteHeader.classList.toggle('menu-open',open);
+ document.body.classList.toggle('menu-lock',open);
+ menuToggle.setAttribute('aria-expanded',String(open));
+ menuToggle.setAttribute('aria-label',open?'بستن منو':'باز کردن منو');
+ mobileMenu.setAttribute('aria-hidden',String(!open));
+}
+menuToggle.addEventListener('click',()=>setMenu(!siteHeader.classList.contains('menu-open')));
+mobileMenu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('click',e=>{if(siteHeader.classList.contains('menu-open')&&!siteHeader.contains(e.target))setMenu(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&siteHeader.classList.contains('menu-open')){setMenu(false);menuToggle.focus()}});
+addEventListener('resize',()=>{if(innerWidth>980)setMenu(false)},{passive:true});
+
+// Highlight the current section in the desktop navigation
+const desktopLinks=[...document.querySelectorAll('.desktop-menu a')];
+const spy=new IntersectionObserver(entries=>{
+ const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+ if(!visible)return;
+ desktopLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${visible.target.id}`));
+},{rootMargin:'-28% 0px -58% 0px',threshold:[0,.1,.3,.6]});
+['home','gallery','about','contact'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el)});
