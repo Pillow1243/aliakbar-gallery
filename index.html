@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="description" content="گالری رسمی علی‌اکبر؛ روایت‌های تصویری از مردم، آیین و خیابان.">
+  <meta property="og:title" content="علی‌اکبر — گالری رسمی">
+  <meta property="og:description" content="روایت‌هایی که در قاب می‌مانند.">
+  <meta property="og:image" content="assets/photos/IMG_20260818_164111_282.jpg">
+  <link rel="icon" href="assets/icons/mark.svg">
+  <link rel="preload" as="image" href="assets/photos/IMG_20260818_164111_282.jpg">
+  <link rel="stylesheet" href="style.css">
+  <title>علی‌اکبر | گالری رسمی</title>
+</head>
+<body>
+  <a class="skip" href="#gallery">رفتن به گالری</a>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="صفحه نخست">
+      <span class="brand-mark">ع</span><span>علی‌اکبر</span>
+    </a>
+    <nav aria-label="ناوبری اصلی">
+      <a href="#gallery">آثار</a><a href="#about">درباره</a>
+      <button class="soundless" id="themeBtn" aria-label="تغییر حالت رنگ">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <img class="hero-img" src="assets/photos/IMG_20260818_164111_282.jpg" alt="جمعیتی در خیابان با پرچم‌ها">
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> گالری رسمی عکس</p>
+        <h1 id="heroTitle">علی‌اکبر</h1>
+        <p class="hero-line">روایت‌هایی که<br><em>در قاب می‌مانند.</em></p>
+        <div class="hero-actions">
+          <a class="primary" href="#gallery">تماشای مجموعه <span>↙</span></a>
+          <span class="counter"><b id="photoCount">۴۰</b> قاب منتخب</span>
+        </div>
+      </div>
+      <p class="hero-index">ARCHIVE / 01—40</p>
+      <a href="#gallery" class="scroll" aria-label="پایین رفتن"><i></i> حرکت کنید</a>
+    </section>
+
+    <section class="statement reveal">
+      <p class="kicker">مانیفست</p>
+      <blockquote>«هر عکس، شاهدی‌ست از لحظه‌ای که دیگر تکرار نمی‌شود.»</blockquote>
+      <p>نگاهی مستند به آدم‌ها، نشانه‌ها و جریان زندگی؛ از ازدحام خیابان تا سکوت یک چهره.</p>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="galleryTitle">
+      <div class="section-head reveal">
+        <div><p class="kicker">آرشیو منتخب</p><h2 id="galleryTitle">قاب‌ها</h2></div>
+        <p>برای دیدن هر تصویر در ابعاد کامل، روی آن کلیک کنید.</p>
+      </div>
+      <div class="filters reveal" id="filters" role="group" aria-label="فیلتر مجموعه‌ها"></div>
+      <div class="gallery" id="galleryGrid" aria-live="polite"></div>
+      <div class="load-wrap"><button class="load" id="loadMore">نمایش قاب‌های بیشتر <span>＋</span></button></div>
+    </section>
+
+    <section class="featured reveal">
+      <div class="featured-photo"><img loading="lazy" src="assets/photos/IMG_20260818_164110_912.jpg" alt="مردی در میان جمعیت دست خود را بالا برده است"></div>
+      <div class="featured-copy"><p class="kicker">قاب برگزیده</p><span class="big-no">01</span><h2>در قلب<br>روایت</h2><p>عکاسی برای من ثبتِ ظاهر رویداد نیست؛ نزدیک‌شدن به ضربان لحظه است.</p><a href="#gallery">دیدن تمام مجموعه ←</a></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-title reveal"><p class="kicker">درباره عکاس</p><h2>پشتِ<br><em>دوربین</em></h2></div>
+      <div class="about-text reveal"><p>این‌جا آرشیو رسمی آثار <strong>علی‌اکبر</strong> است؛ مجموعه‌ای زنده از عکاسی مستند، خیابانی و آیینی که با هر روایت تازه ادامه پیدا می‌کند.</p><p>تصاویر، آدم‌ها را نه به‌عنوان بخشی از پس‌زمینه، بلکه به‌عنوان قلب تپندهٔ هر داستان دنبال می‌کنند.</p><div class="signature">علی‌اکبر <small>PHOTOGRAPHER</small></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">علی‌اکبر<span>گالری رسمی عکس</span></div>
+    <div class="footer-meta"><p>تمامی حقوق تصاویر محفوظ است © <span id="year"></span></p><p>طراحی و توسعه با دقت توسط <strong>مبین.آ</strong></p></div>
+    <a href="#top" class="to-top" aria-label="بازگشت به بالا">↑</a>
+  </footer>
+
+  <dialog class="lightbox" id="lightbox" aria-label="نمایش تصویر">
+    <button class="close" id="closeLightbox" aria-label="بستن">×</button>
+    <button class="arrow prev" id="prevPhoto" aria-label="تصویر قبلی">→</button>
+    <figure><img id="lightboxImg" alt=""><figcaption><span id="lightboxTitle"></span><small id="lightboxMeta"></small></figcaption></figure>
+    <button class="arrow next" id="nextPhoto" aria-label="تصویر بعدی">←</button>
+  </dialog>
+  <noscript><p class="noscript">برای مشاهدهٔ گالری، جاوااسکریپت مرورگر را فعال کنید.</p></noscript>
+  <script src="app.js" defer></script>
+</body>
+</html>
